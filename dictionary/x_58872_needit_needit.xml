@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" extends="task" label="NeedIt" max_length="40" name="x_58872_needit_needit" type="collection">
+        <element attributes="encode_utf8=false" label="Requested For" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="it" label="Request Type" mandatory="true" max_length="40" name="u_request_type" type="string">
+            <choice>
+                <element inactive_on_update="false" label="HR" sequence="0" value="hr"/>
+                <element inactive_on_update="false" label="IT" sequence="1" value="it"/>
+                <element inactive_on_update="false" label="Finance" sequence="2" value="finance"/>
+                <element inactive_on_update="false" label="Legal" sequence="3" value="legal"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="it1" label="What Needed" mandatory="true" max_length="40" name="u_what_needed" type="string">
+            <choice>
+                <element inactive_on_update="false" label="HR1" sequence="0" value="hr1"/>
+                <element inactive_on_update="false" label="IT1" sequence="1" value="it1"/>
+                <element inactive_on_update="false" label="Finance1" sequence="2" value="finance1"/>
+                <element inactive_on_update="false" label="Legal1" sequence="3" value="legal1"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="When Needed" mandatory="true" max_length="40" name="u_when_needed" type="glide_date_time"/>
+    </element>
+</database>
