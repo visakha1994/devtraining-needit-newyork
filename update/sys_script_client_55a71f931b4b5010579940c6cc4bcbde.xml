@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>Populate other value in the dropdown.</description>
+        <field>u_request_type</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Populate Values</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+	var dict = {hr:['Payslip','HRA','DA'],it:['Hardware','Software','Network'],legal:['Divorce','Marriage','Land'],facilities:['Hostel','Cab','Night'],finance:['BCOM','MBA','CA']};
+	if(newValue){
+		dynamicOptions(dict[newValue]);
+	}
+}
+
+function dynamicOptions(values) {
+    g_form.clearOptions('u_what_needed');
+    for (var i = 0; i < values.length; i++) {
+        g_form.addOption('u_what_needed', values[i].toLowerCase(), values[i]);
+    }
+    g_form.addOption('u_what_needed', 'other', 'Other');
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-09-10 04:28:52</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>55a71f931b4b5010579940c6cc4bcbde</sys_id>
+        <sys_mod_count>31</sys_mod_count>
+        <sys_name>Populate Values</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_client_55a71f931b4b5010579940c6cc4bcbde</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-09-10 09:54:53</sys_updated_on>
+        <table>x_58872_needit_needit</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>
